@@ -1,20 +1,70 @@
-<%= simple_form_for(@company) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :website %>
-    <%= f.input :deck %>
-    <%= f.input :contact %>
-    <%= f.input :stage %>
-    <%= f.input :via %>
-    <%= f.input :angel_list %>
-    <%= f.input :mattermark %>
-    <%= f.input :status %>
+<%= form_for @company, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :website, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :website, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :deck, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :deck, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :contact, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :stage, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :stage, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :via, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :via, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :angel_list, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :angel_list, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :mattermark, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :mattermark, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :status, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  companies_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

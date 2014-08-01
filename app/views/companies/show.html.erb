@@ -1,54 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Company -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Company %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @company.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @company.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:website) %></dt>
+      <dd><pre class="prettyprint"><%= @company.website %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:deck) %></dt>
+      <dd><pre class="prettyprint"><%= @company.deck %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:contact) %></dt>
+      <dd><pre class="prettyprint"><%= @company.contact %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:stage) %></dt>
+      <dd><pre class="prettyprint"><%= @company.stage %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:via) %></dt>
+      <dd><pre class="prettyprint"><%= @company.via %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:angel_list) %></dt>
+      <dd><pre class="prettyprint"><%= @company.angel_list %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mattermark) %></dt>
+      <dd><pre class="prettyprint"><%= @company.mattermark %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:status) %></dt>
+      <dd><pre class="prettyprint"><%= @company.status %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @company.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              companies_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_company_path(@company), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              company_path(@company),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @company.website %>
-</p>
-
-<p>
-  <strong>Deck:</strong>
-  <%= @company.deck %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @company.contact %>
-</p>
-
-<p>
-  <strong>Stage:</strong>
-  <%= @company.stage %>
-</p>
-
-<p>
-  <strong>Via:</strong>
-  <%= @company.via %>
-</p>
-
-<p>
-  <strong>Angel list:</strong>
-  <%= @company.angel_list %>
-</p>
-
-<p>
-  <strong>Mattermark:</strong>
-  <%= @company.mattermark %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @company.status %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
