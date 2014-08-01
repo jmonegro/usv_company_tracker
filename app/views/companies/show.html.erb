@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @company.website %>
+</p>
+
+<p>
+  <strong>Deck:</strong>
+  <%= @company.deck %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @company.contact %>
+</p>
+
+<p>
+  <strong>Stage:</strong>
+  <%= @company.stage %>
+</p>
+
+<p>
+  <strong>Via:</strong>
+  <%= @company.via %>
+</p>
+
+<p>
+  <strong>Angel list:</strong>
+  <%= @company.angel_list %>
+</p>
+
+<p>
+  <strong>Mattermark:</strong>
+  <%= @company.mattermark %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @company.status %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
